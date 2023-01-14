@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import contactImg from "../assets/img/connect.svg";
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 export const Contact = () => {
   const formInitialDetails = {
     firstName: "",
@@ -19,10 +22,11 @@ export const Contact = () => {
       [category]: value,
     });
   };
+  const PORT= process.env.PORT || 4000;
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("sending...");
-    let response = await fetch("http://localhost:4000/Contact", {
+    let response = await fetch(`${PORT}/Contact`, {
       method: "POST",
       headers: {
         "Access-Control-Allow-Origin": "*",
