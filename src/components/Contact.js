@@ -26,7 +26,7 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("sending...");
-    let response = await fetch(`${PORT}/Contact`, {
+    let response = await fetch("https://my-portfolio-eta-swart.vercel.app//Contact", {
       method: "POST",
       headers: {
         "Access-Control-Allow-Origin": "*",
