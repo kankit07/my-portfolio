@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
-const dotenv = require('dotenv');
-dotenv.config();
+// const dotenv = require('dotenv');
+// dotenv.config();
 
 // server used to send emails
 const app = express();
@@ -12,8 +12,8 @@ app.use(express.json());
 app.use("/", router);
 const PORT= process.env.PORT || 4000;
 app.listen(PORT, () => console.log("Server Running"));
-const EMAIL_USER = process.env.EMAIL_USER;
-const EMAIL_PASS = process.env.EMAIL_PASS;
+const EMAIL_USER = "07.kankit@gmail.com";
+const EMAIL_PASS = "kencicnwxysznzinc";
 
 const contactEmail = nodemailer.createTransport({
   service: "gmail",
